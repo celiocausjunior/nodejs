@@ -1,11 +1,9 @@
-
 const http = require('http');
-const port = 3000;
-const server = http.createServer((req, res) => {
-  res.statusCode = 200
-  res.setHeader('Content-Type', 'text/plain')
-  res.end('Olá Mundo!n')
-})
-server.listen(port, () => {
-  console.log(`Servidor iniciou em http://localhost:${port}/`)
-})
+
+const routes = require('./routes');
+
+const server = http.createServer(routes);
+
+server.listen(3000, () => {
+  console.log(`Servidor iniciado`);
+});
